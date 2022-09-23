@@ -34,17 +34,39 @@ class Product:
         '''This method allows you to represent the objects of this class ass you like'''
         return f"Product: ({self.name},{self.price},{self.quantity})"
 
-#Tests
-P1 = Product("Abobora",200)
-P1 = Product("Milho",300)
-P1.showInfo()
-P1.iva = 0.15
-print(P1.iva)
 
-# for obj in Product.all:
-#     print(obj.name)
-print(Product.all)
-#print(P1.__init__.__doc__)
+    #staticmethods and classlevel methods   
+    @staticmethod
+    def changeIva(num):
+        #does not pass the instance (self)
+        Product.iva= num
+
+    @classmethod
+    def changeIva2(num):
+        #This one throws an error if you don't put the self
+        Product.iva= num
+
+        
+
+#Tests
+# P1 = Product("Abobora",200)
+# P1 = Product("Milho",300)
+# P1.showInfo()
+# #P1.iva = 0.15
+# print(P1.iva)
+# P1.changeIva(0.5)
+# print("Novo iva de p1: ",P1.iva)
+
+# # for obj in Product.all:
+# #     print(obj.name)
+# print(Product.all)
+# #print(P1.__init__.__doc__)
+
+# #isinstance
+
+# a= 11.0
+
+# print(isinstance(a,int))
 
 
 
